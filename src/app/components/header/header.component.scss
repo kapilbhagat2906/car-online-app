@@ -1,0 +1,35 @@
+@import '../../../scss/variables';
+
+$base-selector: '.header';
+
+$header-background: url('../../../assets/images/mozo-header.png');
+$header-nav-background: url('../../../assets/images/mozo-header-nav.png') no-repeat;
+$header-nav-menu-background: url('../../../assets/images/mozo-header-nav-menu.png') no-repeat;
+
+#{$base-selector} {
+    background: $header-background;
+    background-repeat-y: no-repeat;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+
+    &__nav {
+        background: $header-nav-background;
+        height: 130px;
+
+        @media screen and ( max-width: #{$screen-xs-max} ) {
+            width: 280px;
+        }
+
+        &__menu {
+            background: $header-nav-menu-background;
+            position: absolute;
+            height: 44px;
+            margin-left: 215px;
+            bottom: 0;
+            width: 100%;
+            z-index: -1;
+        }
+    }
+}
