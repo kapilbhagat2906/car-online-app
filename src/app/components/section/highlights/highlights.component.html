@@ -1,0 +1,15 @@
+<div class="highlights">
+    <mdb-carousel [isControls]="true" [animation]="'slide'" [type]="'carousel-thumbnails'">
+        <mdb-slide *ngFor="let highlight of items">
+            <!--Caption-->
+            <div class="carousel-caption">
+                <div class="animated fadeInDown">
+                    <h3 class="h3-responsive">Light mask</h3>
+                    <p>First text</p>
+                </div>
+            </div>
+            <!--Caption-->
+            <img class="d-block w-100" [src]="highlight.field_image" alt="First slide">
+        </mdb-slide>
+    </mdb-carousel>
+</div>

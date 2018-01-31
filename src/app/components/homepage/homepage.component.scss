@@ -1,0 +1,14 @@
+@import '../../../scss/variables';
+
+$base-selector: ".homepage";
+
+$homepage-header-shadow-background: #0f0f0f;
+
+#{$base-selector} {
+    &__header-shadow {
+        @media (max-width: #{$screen-md-max}) {
+            height: 40px;
+            background: $homepage-header-shadow-background;
+        }
+    }
+}

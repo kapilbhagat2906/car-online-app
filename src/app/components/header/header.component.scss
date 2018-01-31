@@ -13,12 +13,13 @@ $header-nav-menu-background: url('../../../assets/images/mozo-header-nav-menu.pn
     left: 0;
     right: 0;
     top: 0;
+    z-index: 1000;
 
     &__nav {
         background: $header-nav-background;
         height: 130px;
 
-        @media screen and ( max-width: #{$screen-xs-max} ) {
+        @media ( max-width: #{$screen-xs-max} ) {
             width: 280px;
         }
 
@@ -30,6 +31,10 @@ $header-nav-menu-background: url('../../../assets/images/mozo-header-nav-menu.pn
             bottom: 0;
             width: 100%;
             z-index: -1;
+
+            @media ( max-width: #{$screen-xs-max} ) {
+                display: none;
+            }
         }
     }
 }
