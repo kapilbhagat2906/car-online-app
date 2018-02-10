@@ -1,41 +1,8 @@
 @import '../../../../scss/variables';
+@import '../../../../scss/mixins/main';
 
 $base-selector: ".highlights";
 
-$highlights-carousel-nav-buttons-background: #fff !default;
-
 #{$base-selector} {
-    .carousel-control-next, .carousel-control-prev {
-        padding: 10px 8px;
-        border-radius: 5px;
-        background: $highlights-carousel-nav-buttons-background;
-        top: initial;
-        bottom: 20px;
-        transform: skewX(-15deg);
-        opacity: 1;
-        width: initial;
-        background: -moz-linear-gradient(top, rgba(249,249,249,0.9) 1%, rgba(249,249,249,0.82) 7%, rgba(198,198,198,0.27) 49%, rgba(200,200,200,0.24) 51%, rgba(249,249,249,0.77) 90%, rgba(249,249,249,0.9) 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(top, rgba(249,249,249,0.9) 1%,rgba(249,249,249,0.82) 7%,rgba(198,198,198,0.27) 49%,rgba(200,200,200,0.24) 51%,rgba(249,249,249,0.77) 90%,rgba(249,249,249,0.9) 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom, rgba(249,249,249,0.9) 1%,rgba(249,249,249,0.82) 7%,rgba(198,198,198,0.27) 49%,rgba(200,200,200,0.24) 51%,rgba(249,249,249,0.77) 90%,rgba(249,249,249,0.9) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6f9f9f9', endColorstr='#e6f9f9f9',GradientType=0 ); /* IE6-9 */
-
-        @media (max-width: #{$screen-xs-max}) {
-            padding: 4px 2px;
-        }
-    }
-
-    .carousel-control-prev {
-        left: initial;
-        right: 100px;
-        @media (max-width: #{$screen-xs-max}) {
-            right: 55px;
-        }
-    }
-
-    .carousel-control-next {
-        right: 40px;
-        @media (max-width: #{$screen-xs-max}) {
-            right: 10px;
-        }
-    }
+    @include carousel-nav-control();
 }

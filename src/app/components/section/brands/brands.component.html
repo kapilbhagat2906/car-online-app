@@ -1,0 +1,20 @@
+<div class="brands-section">
+    <div class="swiper-container" [swiper]="SwiperConfig">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" *ngFor="let brand of items">
+                <div class="brands-section__item">
+                    <span class="brands-section__item__info">{{brand.name}}</span>
+                    <mozo-svg-icon [name]="brand.code" size="medium"></mozo-svg-icon>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper-pagination"></div>
+        <a class="swiper-nav-button swiper-nav-button-prev">
+            <span class="swiper-nav-button-prev-icon" aria-hidden="true"></span>
+        </a>
+        <a class="swiper-nav-button swiper-nav-button-next">
+            <span class="swiper-nav-button-next-icon" aria-hidden="true"></span>
+        </a>
+    </div>
+</div>

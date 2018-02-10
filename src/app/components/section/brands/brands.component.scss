@@ -1,0 +1,32 @@
+@import '../../../../scss/variables';
+@import '../../../../scss/mixins/main';
+
+$base-selector: ".brands-section";
+
+$brands-section-background: $color-very-dark-grey !default;
+$brands-section-color: $color-very-light-grey !default;
+$brands-section-swiper-next-button-background-image-url: '../../../../assets/images/arrow_right.svg';
+$brands-section-swiper-prev-button-background-image-url: '../../../../assets/images/arrow_left.svg';
+
+#{$base-selector} {
+    background: $brands-section-background;
+    color: $brands-section-color;
+
+    @include swiper(
+        $brands-section-swiper-prev-button-background-image-url,
+        $brands-section-swiper-next-button-background-image-url
+    );
+
+    &__item {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__info {
+            font-size: 28px;
+            padding-right: 5px;
+        }
+    }
+}
+@include icon-secondary-style($brands-section-color);

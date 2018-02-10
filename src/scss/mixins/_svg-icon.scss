@@ -1,0 +1,5 @@
+@mixin icon-secondary-style ($color) {
+    .icon-secondary-style {
+        fill: $color;
+    }
+}

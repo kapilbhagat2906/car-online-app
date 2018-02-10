@@ -106,6 +106,11 @@ const postcssPlugins = function (loader) {
     ].concat(minimizeCss ? [cssnano(minimizeOptions)] : []);
 };
 
+/* Make it easier to load svg icons. */
+require.extensions['.svg'] = (module, filename) => {
+    module.exports = fs.readFileSync(filename, 'utf8');
+};
+
 module.exports = {
     "resolve": {
         "extensions": [
@@ -156,6 +161,16 @@ module.exports = {
             {
                 "test": /\.html$/,
                 "loader": "raw-loader"
+            },
+            {
+                "test": /index.html$/,
+                "enforce": 'pre',
+                "loader": 'string-replace-loader',
+                "query": {
+                    "multiple": [
+                        {"search": '__BRANDS-SVG-ICONS__', "replace": require('./src/assets/icons/brands-logo.svg')}
+                    ]
+                }
             },
             {
                 "test": /\.(eot|svg|cur)$/,

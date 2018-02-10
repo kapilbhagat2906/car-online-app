@@ -1,0 +1,62 @@
+@mixin carousel-nav-control (
+    $padding: 10px 8px,
+    $padding-xs: 4px 2px,
+    $border-radius: 5px,
+    $top: initial,
+    $bottom: 20px,
+    $transform: skewX(-15deg),
+    $opacity: 1,
+    $width: initial,
+    $prev-left: initial,
+    $prev-right: 100px,
+    $prev-right-xs: 55px,
+    $prev-icon-width: 36px,
+    $prev-icon-height: 36px,
+    $next-right: 40px,
+    $next-right-xs: 10px,
+    $next-icon-width: 36px,
+    $next-icon-height: 36px
+) {
+    .carousel-control-next, .carousel-control-prev {
+        padding: $padding;
+        border-radius: $border-radius;
+        top: $top;
+        bottom: $bottom;
+        transform: $transform;
+        opacity: $opacity;
+        width: $width;
+        background: -moz-linear-gradient(top, rgba(249,249,249,0.9) 1%, rgba(249,249,249,0.82) 7%, rgba(198,198,198,0.27) 49%, rgba(200,200,200,0.24) 51%, rgba(249,249,249,0.77) 90%, rgba(249,249,249,0.9) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, rgba(249,249,249,0.9) 1%,rgba(249,249,249,0.82) 7%,rgba(198,198,198,0.27) 49%,rgba(200,200,200,0.24) 51%,rgba(249,249,249,0.77) 90%,rgba(249,249,249,0.9) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, rgba(249,249,249,0.9) 1%,rgba(249,249,249,0.82) 7%,rgba(198,198,198,0.27) 49%,rgba(200,200,200,0.24) 51%,rgba(249,249,249,0.77) 90%,rgba(249,249,249,0.9) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6f9f9f9', endColorstr='#e6f9f9f9',GradientType=0 ); /* IE6-9 */
+
+        @media (max-width: #{$screen-xs-max}) {
+            padding: $padding-xs;
+        }
+    }
+
+    .carousel-control-prev {
+        left: $prev-left;
+        right: $prev-right;
+        @media (max-width: #{$screen-xs-max}) {
+            right: $prev-right-xs;
+        }
+
+        &-icon {
+            width: $next-icon-width;
+            height: $next-icon-height;
+        }
+    }
+
+    .carousel-control-next {
+        right: $next-right;
+        @media (max-width: #{$screen-xs-max}) {
+            right: $next-right-xs;
+        }
+
+        &-icon {
+            width: $next-icon-width;
+            height: $next-icon-height;
+        }
+    }
+}
