@@ -38,4 +38,22 @@ export class ScreenSizeService {
         return isSmallScreen;
     }
 
+    getDeviceType(windowWidth: Number) {
+        let deviceType: String = '';
+
+        for (const prop in this.screenSizes) {
+            if (this.screenSizes.hasOwnProperty(prop)) {
+                const deviceTypeConfig = this.screenSizes[prop];
+
+                if (deviceTypeConfig) {
+                    if (windowWidth >= deviceTypeConfig.min && (deviceTypeConfig.max ? (windowWidth <= deviceTypeConfig.max) : true)) {
+                        deviceType = prop;
+                    }
+                }
+            }
+        }
+
+        return deviceType;
+    }
+
 }
