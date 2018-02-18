@@ -1,6 +1,22 @@
 <div class="header">
-    <div class="header__nav container">
-        <div class="header__nav__menu"></div>
+    <div class="header__container container">
+        <div class="header__nav-menu">
+            <div class="header__nav-menu__toggler" *ngIf="isSmallScreen">
+                <i class="fa fa-bars" (click)="toggleNavMenu()"></i>
+            </div>
+            <ul class="header__nav-menu__list" *ngIf="showNavMenu || !isSmallScreen">
+                <li class="header__nav-menu__list__item header__nav-menu__list__item--active">
+                    <a class="header__nav-menu__list__item__link">HOME</a>
+                </li>
+                <li class="header__nav-menu__list__item">
+                    <a class="header__nav-menu__list__item__link">ABOUT US</a>
+                </li>
+                <li class="header__nav-menu__list__item">
+                    <a class="header__nav-menu__list__item__link">CONTACT US</a>
+                </li>
+            </ul>
+        </div>
+        <div class="header__nav"></div>
     </div>
 </div>
 <div class="header__mozo-logo"></div>

@@ -7,6 +7,7 @@ import { SwiperModule, SWIPER_CONFIG, SwiperConfigInterface } from 'ngx-swiper-w
 import { AppRoutingModule } from './app-routing.module';
 
 import { HomePageService } from './components/homepage/homepage.service';
+import { ScreenSizeService } from './services/screen-size.service';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -40,6 +41,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ],
     providers: [
         HomePageService,
+        ScreenSizeService,
         {
             provide: SWIPER_CONFIG,
             useValue: DEFAULT_SWIPER_CONFIG

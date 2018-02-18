@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, HostListener } from '@angular/core';
+import { ScreenSizeService } from '../../services/screen-size.service';
 
 @Component({
     selector: 'mozo-header',
@@ -7,10 +8,26 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
     encapsulation: ViewEncapsulation.None
 })
 export class HeaderComponent implements OnInit {
+    showNavMenu: Boolean = false;
+    isSmallScreen: Boolean;
 
-    constructor() { }
+    @HostListener('window:resize', ['$event'])
+    onResize(event) {
+      this.resize(event);
+    }
+
+    constructor(private screenSizeService: ScreenSizeService) { }
 
     ngOnInit() {
     }
 
+    toggleNavMenu() {
+        this.showNavMenu = !this.showNavMenu;
+    }
+
+    resize(event) {
+        const winWidth = event.target.innerWidth;
+
+        this.isSmallScreen = this.screenSizeService.isSmallScreen(winWidth);
+    }
 }

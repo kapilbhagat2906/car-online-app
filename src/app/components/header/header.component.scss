@@ -2,9 +2,20 @@
 
 $base-selector: '.header';
 
-$header-background: url('../../../assets/images/mozo-header.png');
-$header-nav-background: url('../../../assets/images/mozo-header-nav.png') no-repeat;
-$header-nav-menu-background: url('../../../assets/images/mozo-header-nav-menu.png') no-repeat;
+$header-background: url('../../../assets/images/mozo-header.png') !default;
+$header-nav-background: url('../../../assets/images/mozo-header-nav.png') no-repeat !default;
+$header-nav-height: 130px !default;
+$header-nav-menu-background: url('../../../assets/images/mozo-header-nav-menu.png') no-repeat !default;
+$header-nav-menu-height: 44px !default;
+$header-nav-menu-list-max-height-xs: 50vh !default;
+$header-nav-menu-item-color: $color-dark-grey !default;
+$header-nav-menu-item-color-active: $color-very-light-grey !default;
+$header-nav-menu-item-border-right: 1px solid rgba($color-dark-grey, 0.3) !default;
+$header-nav-menu-item-background: $color-very-dark-grey !default;
+$header-nav-menu-first-item-background-xs: $color-very-dark-grey !default;
+$header-nav-menu-first-item-padding-top-xs: 55px !default;
+$header-nav-menu-toggler-icon-color: $color-very-light-grey !default;
+$header-nav-menu-toggler-icon-font-size: 30px !default;
 
 #{$base-selector} {
     background: $header-background;
@@ -15,25 +26,110 @@ $header-nav-menu-background: url('../../../assets/images/mozo-header-nav-menu.pn
     top: 0;
     z-index: 1000;
 
-    &__nav {
-        background: $header-nav-background;
-        height: 130px;
+    &__container {
+        padding: 0;
+        position: relative;
 
         @media ( max-width: #{$screen-xs-max} ) {
             width: 280px;
         }
 
-        &__menu {
-            background: $header-nav-menu-background;
-            position: absolute;
-            height: 44px;
-            margin-left: 215px;
-            bottom: 0;
+        @media (min-width: #{$screen-sm-min}) and (max-width: #{$screen-sm-max}) {
+            max-width: 100%;
+        }
+    }
+
+    &__nav {
+        background: $header-nav-background;
+        height: $header-nav-height;
+        position: relative;
+    }
+
+    &__nav-menu {
+        background: $header-nav-menu-background;
+        bottom: 0;
+        height: $header-nav-menu-height;
+        left: 230px;
+        position: absolute;
+        right: 0;
+
+        @media ( max-width: #{$screen-xs-max} ) {
+            background: none;
+            bottom: -4px;
+            left: 0;
+        }
+
+        @media (min-width: #{$screen-sm-min}) and (max-width: #{$screen-sm-max}) {
+            background-size: 100% 100%;
+        }
+
+        @media (min-width: #{$screen-md-min}) {
             width: 100%;
-            z-index: -1;
+        }
+
+        &__list {
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            height: 100%;
+            list-style: none;
+            margin-bottom: 0;
+            position: relative;
+            z-index: 1;
 
             @media ( max-width: #{$screen-xs-max} ) {
-                display: none;
+                height: auto;
+                max-height: $header-nav-menu-list-max-height-xs;
+                padding: 0;
+                overflow: auto;
+                z-index: -1;
+            }
+
+            &__item {
+                border-right: $header-nav-menu-item-border-right;
+                color: $header-nav-menu-item-color;
+                cursor: pointer;
+                font-size: 14px;
+                font-weight: bold;
+                letter-spacing: .05em;
+                padding: 0 10px;
+                text-transform: uppercase;
+
+                &:last-child {
+                    border-right: 0;
+                }
+
+                &:hover, &--active {
+                    color: $header-nav-menu-item-color-active;
+                    opacity: .8;
+                }
+
+                @media ( max-width: #{$screen-xs-max} ) {
+                    background: $header-nav-menu-item-background;
+                    border-bottom: $header-nav-menu-item-border-right;
+                    border-right: 0;
+                    padding: 10px 5px;
+                    text-align: center;
+                    width: 100%;
+
+                    &:first-child {
+                        background: $header-nav-menu-first-item-background-xs;
+                        padding-top: $header-nav-menu-first-item-padding-top-xs;
+                    }
+                }
+            }
+        }
+
+        &__toggler {
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            z-index: 1;
+
+            i {
+                font-size: $header-nav-menu-toggler-icon-font-size;
+                color: $header-nav-menu-toggler-icon-color;
+                cursor: pointer;
             }
         }
     }
