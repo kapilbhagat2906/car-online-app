@@ -16,7 +16,11 @@ export class HeaderComponent implements OnInit {
       this.resize(event);
     }
 
-    constructor(private screenSizeService: ScreenSizeService) { }
+    constructor(private screenSizeService: ScreenSizeService) {
+        const winWidth = window.innerWidth;
+
+        this.isSmallScreen = this.screenSizeService.isSmallScreen(winWidth);
+    }
 
     ngOnInit() {
     }

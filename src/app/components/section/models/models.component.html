@@ -1,0 +1,7 @@
+<div class="models-section">
+    <div *ngFor="let group of modelCategories"
+        class="models-section__category"
+        [ngClass]="['col-sm-' + (12 / modelCategories.length)]">
+        <mozo-tiles [items]="items"></mozo-tiles>
+    </div>
+</div>

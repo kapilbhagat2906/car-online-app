@@ -16,6 +16,8 @@ import { HighlightsComponent } from './components/section/highlights/highlights.
 import { TileComponent } from './components/tile/tile.component';
 import { BrandsComponent } from './components/section/brands/brands.component';
 import { SvgIconComponent } from './components/svg-icon/svg-icon.component';
+import { TilesComponent } from './components/tiles/tiles.component';
+import { ModelsComponent } from './components/section/models/models.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     direction: 'horizontal',
@@ -30,7 +32,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
         HighlightsComponent,
         TileComponent,
         BrandsComponent,
-        SvgIconComponent
+        SvgIconComponent,
+        TilesComponent,
+        ModelsComponent
     ],
     imports: [
         BrowserModule,
