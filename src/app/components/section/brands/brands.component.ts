@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Input, HostListener, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { ScreenSizeService } from '../../../services/screen-size.service';
 @Component({
@@ -9,18 +10,7 @@ import { ScreenSizeService } from '../../../services/screen-size.service';
 })
 export class BrandsComponent implements OnInit, AfterViewInit {
     @Input() items: Array<any>;
-    SwiperConfig: SwiperConfigInterface = {
-        navigation: {
-            nextEl: '.swiper-nav-button-next',
-            prevEl: '.swiper-nav-button-prev'
-        },
-        slidesPerView: 4,
-        pagination: {
-            clickable: true,
-            el: '.swiper-pagination'
-        },
-        keyboard: true
-    };
+    SwiperConfig: SwiperConfigInterface = {};
 
     @HostListener('window:resize', ['$event'])
     onResize(event) {
@@ -46,7 +36,10 @@ export class BrandsComponent implements OnInit, AfterViewInit {
         };
     }
 
-    constructor(private screenSizeService: ScreenSizeService) { }
+    constructor(
+        private screenSizeService: ScreenSizeService,
+        private router: Router
+    ) { }
 
     ngOnInit() {
     }
@@ -75,6 +68,10 @@ export class BrandsComponent implements OnInit, AfterViewInit {
         }
 
         return swiperSlidesPerView;
+    }
+
+    showDetails(brandId) {
+        this.router.navigate(['detail/brand', brandId]);
     }
 
 }

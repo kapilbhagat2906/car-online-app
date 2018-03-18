@@ -1,0 +1,52 @@
+@import "./../../../scss/variables";
+
+$base-selector: ".footer";
+
+$footer-link-color: rgba(0,0,0,0.54) !default;
+
+mozo-footer {
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-end;
+
+    #{$base-selector} {
+        width: 100%;
+        padding: 20px 0 0 0;
+        background: $color-very-dark-grey;
+        color: #ffffff;
+
+        &__bar {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 10px;
+
+            .column {
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+            }
+
+            &__caption {
+                font-size: 12px;
+                padding-bottom: 12px;
+                text-transform: uppercase;
+            }
+
+            &__info-block {
+                &__item {
+                    font-size: 12px;
+                    cursor: pointer;
+
+                    &__link {
+                        text-decoration: none;
+
+                    }
+
+                    &__icon {
+                        margin-right: 1px;
+                    }
+                }
+            }
+        }
+    }
+}

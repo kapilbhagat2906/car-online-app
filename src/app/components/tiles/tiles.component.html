@@ -1,11 +1,8 @@
-<div class="brands-section">
+<div class="tiles">
     <div class="swiper-container" [swiper]="SwiperConfig">
         <div class="swiper-wrapper">
-            <div class="swiper-slide" *ngFor="let brand of items">
-                <div class="brands-section__item" (click)="showDetails(brand.id)">
-                    <span class="brands-section__item__info">{{brand.name}}</span>
-                    <mozo-svg-icon [name]="brand.code" size="medium"></mozo-svg-icon>
-                </div>
+            <div class="swiper-slide" *ngFor="let item of items">
+                <mozo-tile [item]="item"></mozo-tile>
             </div>
         </div>
 

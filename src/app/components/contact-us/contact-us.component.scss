@@ -1,0 +1,14 @@
+$base-selector: ".contact-us";
+
+#{$base-selector} {
+    padding-top: 45px;
+
+    &__caption {
+        font-size: 26px;
+        font-weight: bold;
+    }
+
+    hr {
+        margin-top: 5px;
+    }
+}

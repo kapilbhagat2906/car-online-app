@@ -1,0 +1,6 @@
+<div class="deepsite-page" [ngClass]="{'opened' : isOpened}">
+    <div class="deepsite-page__overlay" (click)="closeDeepsite()"></div>
+    <div class="deepsite-page__container container">
+        <router-outlet></router-outlet>
+    </div>
+</div>

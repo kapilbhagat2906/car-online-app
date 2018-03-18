@@ -1,0 +1,12 @@
+$base-selector: ".footer-infobar";
+
+#{$base-selector} {
+    padding: 10px 0;
+    display: flex;
+
+    &__copyright-text {
+        display: flex;
+        flex-grow: 1;
+        font-size: 12px;
+    }
+}

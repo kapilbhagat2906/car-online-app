@@ -87,21 +87,12 @@ $header-nav-menu-toggler-icon-font-size: 30px !default;
 
             &__item {
                 border-right: $header-nav-menu-item-border-right;
-                color: $header-nav-menu-item-color;
                 cursor: pointer;
                 font-size: 14px;
-                font-weight: bold;
-                letter-spacing: .05em;
                 padding: 0 10px;
-                text-transform: uppercase;
 
                 &:last-child {
                     border-right: 0;
-                }
-
-                &:hover, &--active {
-                    color: $header-nav-menu-item-color-active;
-                    opacity: .8;
                 }
 
                 @media ( max-width: #{$screen-xs-max} ) {
@@ -115,6 +106,18 @@ $header-nav-menu-toggler-icon-font-size: 30px !default;
                     &:first-child {
                         background: $header-nav-menu-first-item-background-xs;
                         padding-top: $header-nav-menu-first-item-padding-top-xs;
+                    }
+                }
+
+                &__link {
+                    color: $header-nav-menu-item-color;
+                    font-weight: bold;
+                    letter-spacing: .05em;
+                    text-transform: uppercase;
+
+                    &:hover, &--active {
+                        color: $header-nav-menu-item-color-active;
+                        opacity: .8;
                     }
                 }
             }

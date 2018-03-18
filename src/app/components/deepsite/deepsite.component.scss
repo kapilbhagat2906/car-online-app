@@ -1,0 +1,29 @@
+@import '../../../scss/variables';
+
+$base-selector: '.deepsite-page';
+
+$deepsite-page-container-background: $color-white !default;
+$deepsite-page-overlay-background: rgba($color-black, .5) !default;
+
+#{$base-selector} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+
+    &__overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: $deepsite-page-overlay-background;
+        z-index: -1;
+    }
+
+    &__container  {
+        background: $deepsite-page-container-background;
+        height: 100%;
+        padding: 0;
+    }
+}

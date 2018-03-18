@@ -3,5 +3,12 @@ $base-selector: '.models-section';
 #{$base-selector} {
     &__category {
         display: inline-block;
+
+        &__caption {
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+            padding: 10px 0;
+        }
     }
 }

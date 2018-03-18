@@ -2,16 +2,67 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomepageComponent } from './components/homepage/homepage.component';
+import { DeepsiteComponent } from './components/deepsite/deepsite.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { ModelDetailsPageComponent } from './components/deepsite/model-details-page/model-details-page.component';
+import { BrandDetailsPageComponent } from './components/deepsite/brand-details-page/brand-details-page.component';
+import { OverviewComponent } from './components/deepsite/model-details-page/overview/overview.component';
+import { PriceComponent } from './components/deepsite/model-details-page/price/price.component';
+import { SpecificationsComponent } from './components/deepsite/model-details-page/specifications/specifications.component';
 
 const routes: Routes = [
     {
         path: '',
-        component: HomepageComponent
+        component: HomepageComponent,
+        children: [
+            {
+                path: 'detail',
+                component: DeepsiteComponent,
+                children: [
+                    {
+                        path: 'model/:id',
+                        component: ModelDetailsPageComponent,
+                        children: [
+                            {
+                                path: '',
+                                pathMatch: 'full',
+                                redirectTo: 'overview'
+                            },
+                            {
+                                path: 'overview',
+                                component: OverviewComponent
+                            },
+                            {
+                                path: 'price',
+                                component: PriceComponent
+                            },
+                            {
+                                path: 'specs',
+                                component: SpecificationsComponent
+                            }
+                        ]
+                    },
+                    {
+                        path: 'brand/:id',
+                        component: BrandDetailsPageComponent
+                    }
+                ]
+            }
+        ]
     },
     {
         path: 'home',
         redirectTo: ''
     },
+    {
+        path: 'aboutUs',
+        component: AboutUsComponent
+    },
+    {
+        path: 'contactUs',
+        component: ContactUsComponent
+    }
 ];
 
 @NgModule({
