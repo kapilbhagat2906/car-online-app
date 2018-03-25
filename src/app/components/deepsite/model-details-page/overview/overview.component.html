@@ -1,3 +1,23 @@
-<p>
-    overview works!
-</p>
+<div class="model-details-overview">
+    <div class="row model-details-overview__top-section">
+        <div class="col-sm-5 model-details-overview__top-section__left">
+            <div class="model-details-overview__top-section__left__caption">
+                {{ modelsData.modelOverview.name }}
+            </div>
+            <div class="model-details-overview__top-section__left__price-range">
+                {{ priceRange.min }} - {{ priceRange.max }} Lakhs*
+            </div>
+        </div>
+        <div class="col-sm-7 model-details-overview__top-section__right">
+            <img [src]="modelOverviewImageUrl" alt="modelsData.modelOverview.name" />
+        </div>
+    </div>
+    <div class="model-details-overview__details-box">
+        <mozo-details-box [config]="detailsBoxConfig"></mozo-details-box>
+    </div>
+    <div class="model-details-overview__description">
+        {{ modelsData.modelDetails.description }}
+    </div>
+</div>
+
+

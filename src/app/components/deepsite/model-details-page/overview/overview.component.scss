@@ -1,0 +1,46 @@
+@import '../../../../../scss/variables';
+
+$base-selector: '.model-details-overview';
+
+#{$base-selector} {
+    @media ( min-width: #{$screen-sm-min} ) {
+        padding: 20px;
+    }
+
+    .row {
+        margin: 0;
+    }
+
+    div[class*="col-"] {
+        padding: 0;
+    }
+
+    &__top-section {
+        &__left {
+            &__caption {
+                font-size: 30px;
+                font-weight: bold;
+            }
+
+            &__price-range {
+                font-size: 18px;
+                font-weight: bold;
+            }
+        }
+
+        &__right {
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    &__details-box {
+        padding-top: 20px;
+    }
+
+    &__description {
+        padding-top: 20px;
+        font-size: 13px;
+    }
+}

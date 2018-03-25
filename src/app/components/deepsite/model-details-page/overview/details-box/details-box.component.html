@@ -1,0 +1,18 @@
+<div class="details-box">
+    <div *ngFor="let category of config" class="details-box__category">
+        <div class="details-box__category__title">{{category.title}}</div>
+        <div class="details-box__category__details">
+            <div class="details-box__category__details__detail" *ngFor="let detail of category.details">
+                <span class="details-box__category__details__detail__caption">{{detail.title}} : </span>
+                <i class="fa details-box__category__details__detail__icon"
+                    [ngClass]="{'fa-check-circle': detail.dataField, 'fa-times-circle': !detail.dataField}"
+                    *ngIf="detail.dataField === true || detail.dataField === false">
+                </i>
+                <span class="details-box__category__details__detail__value"
+                    *ngIf="detail.dataField !== true && detail.dataField !== false">
+                    {{detail.dataField}}
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

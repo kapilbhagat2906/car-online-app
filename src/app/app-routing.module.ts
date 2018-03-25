@@ -11,6 +11,9 @@ import { OverviewComponent } from './components/deepsite/model-details-page/over
 import { PriceComponent } from './components/deepsite/model-details-page/price/price.component';
 import { SpecificationsComponent } from './components/deepsite/model-details-page/specifications/specifications.component';
 
+import { ModelDetailsResolve } from './components/deepsite/model-details-page/model-details.resolver';
+import { VariantsInfoResolve } from './components/deepsite/model-details-page/variants-info.resolver';
+
 const routes: Routes = [
     {
         path: '',
@@ -23,6 +26,10 @@ const routes: Routes = [
                     {
                         path: 'model/:id',
                         component: ModelDetailsPageComponent,
+                        resolve: {
+                            modelDetails: ModelDetailsResolve,
+                            variantsInfo: VariantsInfoResolve
+                        },
                         children: [
                             {
                                 path: '',

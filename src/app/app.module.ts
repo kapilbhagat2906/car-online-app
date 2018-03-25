@@ -8,6 +8,10 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { HomePageService } from './components/homepage/homepage.service';
 import { ScreenSizeService } from './services/screen-size.service';
+import { DeepsiteService } from './components/deepsite/deepsite.service';
+
+import { ModelDetailsResolve } from './components/deepsite/model-details-page/model-details.resolver';
+import { VariantsInfoResolve } from './components/deepsite/model-details-page/variants-info.resolver';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -28,6 +32,7 @@ import { BrandDetailsPageComponent } from './components/deepsite/brand-details-p
 import { OverviewComponent } from './components/deepsite/model-details-page/overview/overview.component';
 import { PriceComponent } from './components/deepsite/model-details-page/price/price.component';
 import { SpecificationsComponent } from './components/deepsite/model-details-page/specifications/specifications.component';
+import { DetailsBoxComponent } from './components/deepsite/model-details-page/overview/details-box/details-box.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     direction: 'horizontal',
@@ -54,7 +59,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
         BrandDetailsPageComponent,
         OverviewComponent,
         PriceComponent,
-        SpecificationsComponent
+        SpecificationsComponent,
+        DetailsBoxComponent
     ],
     imports: [
         BrowserModule,
@@ -66,6 +72,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     providers: [
         HomePageService,
         ScreenSizeService,
+        DeepsiteService,
+        ModelDetailsResolve,
+        VariantsInfoResolve,
         {
             provide: SWIPER_CONFIG,
             useValue: DEFAULT_SWIPER_CONFIG

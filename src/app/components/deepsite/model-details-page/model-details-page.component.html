@@ -1,4 +1,25 @@
-<p>
-    model-details-page works!
-    <router-outlet></router-outlet>
-</p>
+<div class="model-details-page">
+    <ul class="model-details-page__menu">
+        <li class="model-details-page__menu__item"
+            routerLink="./overview"
+            routerLinkActive="model-details-page__menu__item--active"
+            [routerLinkActiveOptions]="{ exact: true }">
+            <a>Overview</a>
+        </li>
+        <li class="model-details-page__menu__item"
+            routerLink="./price"
+            routerLinkActive="model-details-page__menu__item--active"
+            [routerLinkActiveOptions]="{ exact: true }">
+            <a>Price</a>
+        </li>
+        <li class="model-details-page__menu__item"
+            routerLink="./specs"
+            routerLinkActive="model-details-page__menu__item--active"
+            [routerLinkActiveOptions]="{ exact: true }">
+            <a>Specifications</a>
+        </li>
+    </ul>
+    <div class="model-details-page__content">
+        <router-outlet></router-outlet>
+    </div>
+</div>
