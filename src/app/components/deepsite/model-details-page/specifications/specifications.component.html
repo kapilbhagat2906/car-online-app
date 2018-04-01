@@ -1,3 +1,48 @@
-<p>
-    specifications works!
-</p>
+<div class="model-details-specifications">
+    <div class="row model-details-specifications__top-section">
+        <div class="col-sm-5 model-details-specifications__top-section__left">
+            <div class="model-details-specifications__top-section__left__caption">
+                {{ modelsData.modelOverview.name + ' - ' + selectedVariant.name }}
+            </div>
+            <div class="model-details-specifications__top-section__left__price-range">
+                {{ selectedVariant.price }} Lakhs*
+            </div>
+        </div>
+        <div class="col-sm-7 model-details-overview__top-section__right">
+            <div class="dropdown" dropdown>
+                <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle waves-light" mdbRippleRadius>
+                    {{ selectedVariant.name }}
+                </button>
+
+                <div class="dropdown-menu">
+                    <a class="dropdown-item"
+                        (click)="changeVariantSelection(variant)"
+                        *ngFor="let variant of variantsInfo">
+                        {{ variant.name }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="model-details-specifications__description">
+        {{ selectedVariant.description }}
+    </div>
+    <div class="model-details-specifications__specs">
+        <div class="model-details-specifications__specs__caption">
+            Specifications
+        </div>
+        <div class="row model-details-specifications__specs__info" *ngFor="let spec of specsToBeDisplayed">
+            <div class="col-sm-6 model-details-specifications__specs__info__label">{{ spec.label }}</div>
+            <div class="col-sm-6">
+                <i class="fa model-details-specifications__specs__info__icon"
+                    [ngClass]="{'fa-check-circle': spec.value, 'fa-times-circle': !spec.value}"
+                    *ngIf="spec.value === true || spec.value === false">
+                </i>
+                <span class="model-details-specifications__specs__info__value"
+                    *ngIf="spec.value !== true && spec.value !== false">
+                    {{ spec.value }}
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

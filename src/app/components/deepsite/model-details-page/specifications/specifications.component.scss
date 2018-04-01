@@ -1,0 +1,66 @@
+@import '../../../../../scss/variables';
+
+$base-selector: '.model-details-specifications';
+$model-details-specifications-icon-color: $color-bright-red !default;
+$model-details-specifications-check-icon-color: $color-dark-lime-green !default;
+
+
+#{$base-selector} {
+    @media ( min-width: #{$screen-sm-min} ) {
+        padding: 20px;
+    }
+
+    .row {
+        margin: 0;
+    }
+
+    div[class*="col-"] {
+        padding: 0;
+    }
+
+    &__top-section {
+        &__left {
+            &__caption {
+                font-size: 30px;
+                font-weight: bold;
+            }
+
+            &__price-range {
+                font-size: 18px;
+                font-weight: bold;
+            }
+        }
+    }
+
+    &__description {
+        padding-top: 20px;
+        font-size: 13px;
+    }
+
+    &__specs {
+        padding-top: 10px;
+
+        &__caption {
+            font-size: 18px;
+            font-weight: bold;
+            padding: 5px 0;
+        }
+
+        &__info {
+            font-size: 14px;
+            line-height: 2;
+
+            &__label {
+                font-weight: bold;
+            }
+            &__icon {
+                font-size: 14px;
+                color: $model-details-specifications-icon-color;
+
+                &.fa-check-circle {
+                    color: $model-details-specifications-check-icon-color;
+                }
+            }
+        }
+    }
+}

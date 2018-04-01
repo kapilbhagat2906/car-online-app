@@ -7,6 +7,7 @@
             <ul class="header__nav-menu__list" *ngIf="showNavMenu || !isSmallScreen">
                 <li class="header__nav-menu__list__item">
                     <a class="header__nav-menu__list__item__link"
+                        (click)="toggleNavMenu()"
                         routerLink="/"
                         routerLinkActive="header__nav-menu__list__item__link--active"
                         [routerLinkActiveOptions]="{ exact: true }">
@@ -15,6 +16,7 @@
                 </li>
                 <li class="header__nav-menu__list__item">
                     <a class="header__nav-menu__list__item__link"
+                        (click)="toggleNavMenu()"
                         routerLink="/aboutUs"
                         routerLinkActive="header__nav-menu__list__item__link--active">
                         ABOUT US
@@ -22,6 +24,7 @@
                 </li>
                 <li class="header__nav-menu__list__item">
                     <a class="header__nav-menu__list__item__link"
+                        (click)="toggleNavMenu()"
                         routerLink="/contactUs"
                         routerLinkActive="header__nav-menu__list__item__link--active">
                         CONTACT US

@@ -33,6 +33,7 @@ import { OverviewComponent } from './components/deepsite/model-details-page/over
 import { PriceComponent } from './components/deepsite/model-details-page/price/price.component';
 import { SpecificationsComponent } from './components/deepsite/model-details-page/specifications/specifications.component';
 import { DetailsBoxComponent } from './components/deepsite/model-details-page/overview/details-box/details-box.component';
+import { ObjectKeyValuePipe } from './pipes/object-key-value/object-key-value.pipe';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     direction: 'horizontal',
@@ -60,7 +61,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
         OverviewComponent,
         PriceComponent,
         SpecificationsComponent,
-        DetailsBoxComponent
+        DetailsBoxComponent,
+        ObjectKeyValuePipe
     ],
     imports: [
         BrowserModule,

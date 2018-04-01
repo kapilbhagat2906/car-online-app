@@ -11,11 +11,24 @@ $details-box-details-check-icon-color: $color-dark-lime-green !default;
     border: 2px solid $details-box-border-color;
     border-radius: 5px;
     display: flex;
+    flex-wrap: wrap;
 
     &__category {
         flex-grow: 1;
         border-right: 2px solid $details-box-border-color;
         padding: 0 10px;
+
+        @media (max-width: $screen-xs-max) {
+            width: 100%;
+            border-right: none;
+        }
+
+        @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+            width: 50%;
+            &:nth-child(2n) {
+                border-right: none;
+            }
+        }
 
         &:last-child {
           border-right: 0;
