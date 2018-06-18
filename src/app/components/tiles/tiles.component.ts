@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewEncapsulation, Input } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnChanges, ViewEncapsulation, Input } from '@angular/core';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
 @Component({
@@ -7,9 +7,10 @@ import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
     styleUrls: ['./tiles.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class TilesComponent implements OnInit, AfterViewInit {
+export class TilesComponent implements OnInit, AfterViewInit, OnChanges {
     @Input() items: Array<any>;
     @Input() direction: string;
+    @Input() tilesPerView: number;
 
     SwiperConfig: SwiperConfigInterface = {};
 
@@ -21,17 +22,22 @@ export class TilesComponent implements OnInit, AfterViewInit {
                 nextEl: '.swiper-nav-button-next',
                 prevEl: '.swiper-nav-button-prev'
             },
-            slidesPerView: 1,
+            slidesPerView: this.tilesPerView || 'auto',
             pagination: {
                 clickable: true,
                 el: '.swiper-pagination'
             },
-            keyboard: true
+            keyboard: true,
+            spaceBetween: 4
         };
     }
 
     ngOnInit() {
 
+    }
+
+    ngOnChanges() {
+        this.SwiperConfig.slidesPerView = this.tilesPerView || 'auto';
     }
 
 }

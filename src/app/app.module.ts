@@ -12,6 +12,7 @@ import { DeepsiteService } from './components/deepsite/deepsite.service';
 
 import { ModelDetailsResolve } from './components/deepsite/model-details-page/model-details.resolver';
 import { VariantsInfoResolve } from './components/deepsite/model-details-page/variants-info.resolver';
+import { BrandDetailsResolve } from './components/deepsite/brand-details-page/brand-details.resolver';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -34,6 +35,7 @@ import { PriceComponent } from './components/deepsite/model-details-page/price/p
 import { SpecificationsComponent } from './components/deepsite/model-details-page/specifications/specifications.component';
 import { DetailsBoxComponent } from './components/deepsite/model-details-page/overview/details-box/details-box.component';
 import { ObjectKeyValuePipe } from './pipes/object-key-value/object-key-value.pipe';
+import { ModelsFilterPipe } from './components/section/models/models-filter.pipe';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     direction: 'horizontal',
@@ -62,7 +64,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
         PriceComponent,
         SpecificationsComponent,
         DetailsBoxComponent,
-        ObjectKeyValuePipe
+        ObjectKeyValuePipe,
+        ModelsFilterPipe
     ],
     imports: [
         BrowserModule,
@@ -77,6 +80,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
         DeepsiteService,
         ModelDetailsResolve,
         VariantsInfoResolve,
+        BrandDetailsResolve,
         {
             provide: SWIPER_CONFIG,
             useValue: DEFAULT_SWIPER_CONFIG

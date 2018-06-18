@@ -1,6 +1,7 @@
 @mixin swiper(
     $prev-button-background-image-url,
     $next-button-background-image-url,
+    $prev-button-color: $color-white,
     $container-padding: 70px 0,
     $prev-button-left: 0,
     $next-button-right: 0,

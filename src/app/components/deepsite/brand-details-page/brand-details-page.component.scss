@@ -1,0 +1,44 @@
+@import '../../../../scss/variables';
+@import '../../../../scss/mixins/main';
+
+$base-selector: '.brand-details';
+
+$brands-details-page-background: $color-white !default;
+$brands-details-page-color: $color-very-dark-grey !default;
+$brands-details-page-swiper-icon-color: $color-very-dark-grey !default;
+$brands-details-page-swiper-next-button-background-image-url: '../../../../assets/images/arrow_right.svg';
+$brands-details-page-swiper-prev-button-background-image-url: '../../../../assets/images/arrow_left.svg';
+
+#{$base-selector} {
+    height: 100%;
+    overflow: auto;
+
+    &__title {
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    &__description {
+        font-size: 13px;
+    }
+
+    &__caption {
+        font-size: 22px;
+        font-weight: bold;
+        padding-top: 20px;
+    }
+
+    .brands-section {
+        background: $brands-details-page-background;
+        color: $brands-details-page-color;
+
+        @include swiper(
+            $prev-button-background-image-url: $brands-details-page-swiper-prev-button-background-image-url,
+            $next-button-background-image-url: $brands-details-page-swiper-next-button-background-image-url,
+            $prev-button-color: $brands-details-page-swiper-icon-color,
+            $container-padding: 20px 0,
+            $nav-button-width: 30px,
+            $nav-button-height: 40px
+        );
+    }
+}

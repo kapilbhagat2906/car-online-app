@@ -3,6 +3,7 @@ $base-selector: '.models-section';
 #{$base-selector} {
     &__category {
         display: inline-block;
+        vertical-align: top;
 
         &__caption {
             font-weight: bold;

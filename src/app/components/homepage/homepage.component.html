@@ -1,4 +1,13 @@
 <div class="homepage">
     <div class="homepage__header-shadow"></div>
     <mozo-highlights [items]="highlights"></mozo-highlights>
+    <div class="container">
+        <mozo-models [items]="trendingModels"
+            [modelCategories]="modelCategories">
+        </mozo-models>
+    </div>
+    <mozo-brands [items]="trendingBrands"></mozo-brands>
+</div>
+<div class="home-content">
+    <router-outlet></router-outlet>
 </div>

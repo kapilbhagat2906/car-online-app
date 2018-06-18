@@ -17,6 +17,11 @@ export class DeepsiteService {
             .catch(this.handleError);
     }
 
+    getBrandDetails(id: string): Observable<Response> {
+        return this.http.get(`api/branddetails/${id}`)
+            .catch(this.handleError);
+    }
+
     handleError(error: Response) {
         console.error('error: ' + error);
         return Observable.throw(error);

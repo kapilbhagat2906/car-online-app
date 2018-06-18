@@ -13,8 +13,8 @@ $brands-section-swiper-prev-button-background-image-url: '../../../../assets/ima
     color: $brands-section-color;
 
     @include swiper(
-        $brands-section-swiper-prev-button-background-image-url,
-        $brands-section-swiper-next-button-background-image-url
+        $prev-button-background-image-url: $brands-section-swiper-prev-button-background-image-url,
+        $next-button-background-image-url: $brands-section-swiper-next-button-background-image-url
     );
 
     &__item {

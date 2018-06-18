@@ -13,6 +13,7 @@ import { SpecificationsComponent } from './components/deepsite/model-details-pag
 
 import { ModelDetailsResolve } from './components/deepsite/model-details-page/model-details.resolver';
 import { VariantsInfoResolve } from './components/deepsite/model-details-page/variants-info.resolver';
+import { BrandDetailsResolve } from './components/deepsite/brand-details-page/brand-details.resolver';
 
 const routes: Routes = [
     {
@@ -52,7 +53,10 @@ const routes: Routes = [
                     },
                     {
                         path: 'brand/:id',
-                        component: BrandDetailsPageComponent
+                        component: BrandDetailsPageComponent,
+                        resolve: {
+                            brandDetails: BrandDetailsResolve
+                        }
                     }
                 ]
             }

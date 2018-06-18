@@ -8,21 +8,8 @@ import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 })
 export class ModelsComponent implements OnInit {
     @Input() items: Array<any>;
-
-    modelCategories: any = [
-        {
-            'groupName': 'Popular',
-            'criteria': ''
-        },
-        {
-            'groupName': 'Upcoming Cars',
-            'criteria': ''
-        },
-        {
-            'groupName': 'Just Launched',
-            'criteria': ''
-        }
-    ];
+    @Input() modelCategories: Array<any>;
+    @Input() tilesPerView: number;
 
     constructor() { }
 

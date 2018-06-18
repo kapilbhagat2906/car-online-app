@@ -11,6 +11,27 @@ export class HomepageComponent implements OnInit {
     trendingBrands: Array<any>;
     trendingModels: Array<any>;
     highlights: Array<any>;
+    modelCategories: any = [
+        {
+            'groupName': 'Popular',
+            'criteria': {
+                launchStatus: 'LAUNCHED'
+            }
+        },
+        {
+            'groupName': 'Upcoming Cars',
+            'criteria': {
+                launchStatus: 'COMING_SOON'
+            }
+        },
+        {
+            'groupName': 'Just Launched',
+            'criteria': {
+                launchStatus: 'LAUNCHED',
+                launchDaysAgo: 160
+            }
+        }
+    ];
 
     constructor(private homePageService: HomePageService) { }
 
